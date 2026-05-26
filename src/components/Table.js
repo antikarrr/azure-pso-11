@@ -25,8 +25,11 @@ const Table = () => {
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error</div>;
 
+  // Pastikan data selalu array
+  const dataArray = Array.isArray(data) ? data : data?.data || data?.users || [];
+
   // Filter & Search logic
-  const filteredData = data?.filter((user) => {
+  const filteredData = dataArray.filter((user) => {
     const matchSearch = user.name
       .toLowerCase()
       .includes(search.toLowerCase());
@@ -104,7 +107,7 @@ const Table = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredData?.length === 0 ? (
+            {filteredData.length === 0 ? (
               <tr>
                 <td
                   colSpan={8}
@@ -114,7 +117,7 @@ const Table = () => {
                 </td>
               </tr>
             ) : (
-              filteredData?.map((obj) => (
+              filteredData.map((obj) => (
                 <Tr key={obj._id} {...obj} />
               ))
             )}
@@ -163,9 +166,7 @@ function Tr({
       </td>
 
       <td className="text-gray-700">{email}</td>
-
       <td className="text-right font-medium pr-5">{salary}</td>
-
       <td className="text-center">{date}</td>
 
       <td className="text-center">
