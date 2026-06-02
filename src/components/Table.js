@@ -87,7 +87,12 @@ const Table = () => {
           <span> · Role: <span className="font-semibold text-indigo-500">{filterRole}</span></span>
         )}
         {search && (
-          <span> · Pencarian: <span className="font-semibold text-indigo-500">"{search}"</span></span>
+          <span>
+            {" "}· Pencarian:{" "}
+            <span className="font-semibold text-indigo-500">
+              &quot;{search}&quot;
+          </span>
+        </span>
         )}
       </p>
 
