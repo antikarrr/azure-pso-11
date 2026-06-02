@@ -114,3 +114,8 @@ https://github.com/NimeshPiyumantha/NextJs_CRUD-with-MongoDB.git
 #### @2023 [Nimesh Piyumantha](https://github.com/NimeshPiyumantha/), Inc.All rights reserved
 
 </div>
+
+## Project Documentation
+
+- [Installation Guide](https://www.notion.so/PSO-11-Project-Documentation-36a895d6615d803d9d11db83e0388766?source=copy_link)
+- [Project Board](https://github.com/users/cindy-fatika/projects/1/views/1)
