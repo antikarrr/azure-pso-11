@@ -23,7 +23,7 @@ test('getUsers mengembalikan array berisi data user', async () => {
   expect(Array.isArray(result)).toBe(true)
   expect(result).toEqual(mockUsers)
   expect(fetch).toHaveBeenCalledTimes(1)
-  expect(fetch).toHaveBeenCalledWith('http://localhost:3000/api/users')
+  expect(fetch).toHaveBeenCalledWith('/api/users')
 })
 
 test('getUsers mengembalikan array kosong jika fetch gagal', async () => {
@@ -48,7 +48,7 @@ test('getUser mengembalikan data satu user berdasarkan ID', async () => {
   const result = await getUser('id123')
 
   expect(result).toEqual(mockUser)
-  expect(fetch).toHaveBeenCalledWith('http://localhost:3000/api/users/id123')
+  expect(fetch).toHaveBeenCalledWith('/api/users/id123')
 })
 
 test('getUser mengembalikan objek kosong jika fetch gagal', async () => {
@@ -76,7 +76,7 @@ test('addUser berhasil mengirim data dan mengembalikan success', async () => {
 
   expect(result.success).toBe(true)
   expect(fetch).toHaveBeenCalledWith(
-    'http://localhost:3000/api/users',
+    '/api/users',
     expect.objectContaining({
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -119,7 +119,7 @@ test('updateUser berhasil mengupdate data user', async () => {
 
   expect(result.success).toBe(true)
   expect(fetch).toHaveBeenCalledWith(
-    'http://localhost:3000/api/users/id123',
+    '/api/users/id123',
     expect.objectContaining({
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -145,7 +145,7 @@ test('deleteUser berhasil menghapus user berdasarkan ID', async () => {
 
   expect(result.success).toBe(true)
   expect(fetch).toHaveBeenCalledWith(
-    'http://localhost:3000/api/users/id123',
+    '/api/users/id123',
     expect.objectContaining({
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' }

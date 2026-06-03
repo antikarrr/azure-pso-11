@@ -28,7 +28,7 @@ jobs:
         run: npm test -- --coverage
         env:
           MONGO_CONNECTION: ${{ secrets.MONGO_CONNECTION }}
-
+        
       - name: Build Next.js application
         run: npm run build
         env:
